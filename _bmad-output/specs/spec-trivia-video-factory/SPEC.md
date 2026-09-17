@@ -15,7 +15,7 @@ sources:
 
 ## Why
 
-A vision to realize, with a person at the center of it. Carrie wants to make TikTok trivia videos — a format that works because the viewer pauses to guess before the answer lands — and she wants AI to make them. Jarad is teaching her, and his own stated failure mode is dumping everything at once: MCP servers, skills, CLI choice, model choice, delivered as one batch that scares people off. So the pipeline and the curriculum are deliberately the same artifact: each phase of making the video is one lesson, and a concept is named only after the capability it bought has already done something she wanted. The video is the vehicle; the cargo is a working mental model of what AI is for. Carrie is the boss in this arrangement, which carries a boss's credit and a boss's blame — that accountability is precisely what makes a weak first video her call to redirect rather than evidence against the tool.
+A vision to realize, with a person at the center of it. Carrie wants to make TikTok trivia videos — a format that works because the viewer pauses to guess before the answer lands — and she wants AI to make them. Carrie starts out skeptical of AI and willing to learn anyway; that skepticism is the pre-state every success check measures against. Jarad is teaching her, and his own stated failure mode is dumping everything at once: MCP servers, skills, CLI choice, model choice, delivered as one batch that scares people off. So the pipeline and the curriculum are deliberately the same artifact: each phase of making the video is one lesson, and a concept is named only after the capability it bought has already done something she wanted. The video is the vehicle; the cargo is a working mental model of what AI is for. Carrie is the boss in this arrangement, which carries a boss's credit and a boss's blame — that accountability is precisely what makes a weak first video her call to redirect rather than evidence against the tool.
 
 ## Capabilities
 
@@ -103,7 +103,6 @@ Asked at the end what she got out of this, Carrie answers about leverage rather 
 ## Assumptions
 
 - Carrie is Jarad's wife and this is a shared domestic project, not a training engagement. That sets the agent's register and the tolerance for a between-session nudge.
-- The opinion being moved is Carrie's. The transcript's "I'm not a fan of AI. She knows that that's my thing" reads as Jarad's own stance, but the curriculum is built as though hers is the skepticism under test.
 - Trivia videos are something Carrie genuinely wants to make. The transcript names a diagnosis where the work not being fun means the subject is wrong — which would make the right response a different project, not more lessons.
 - Ten questions in a two-minute video is the working output contract. The transcript offers it as an example figure.
 
