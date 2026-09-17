@@ -9,7 +9,7 @@ An automated pipeline that produces TikTok trivia videos end to end — question
 
 - Never publish to TikTok from code. The pipeline renders and stages; Carrie approves every post by hand.
 - Never bundle two new concepts into one phase — one tool, one idea, one working result. Pacing is the product here, not a nicety.
-- Carrie's only interface is the Hermes agent. Never design a step that requires her to edit a file, run a command, or read this repo.
+- Carrie's interface is the Hermes agent. Never design a step that *requires* her to edit a file, run a command, or read this repo; answering a question she asked is fine.
 
 ## Where things are
 

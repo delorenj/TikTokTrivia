@@ -42,7 +42,7 @@ A vision to realize, with a person at the center of it. Carrie wants to make Tik
   - **success:** Instruction turns per video, counted across videos 1..N, decline rather than hold flat.
 - **CAP-8**
   - **intent:** Carrie's entire experience is a conversation with one agent that remembers her and the project across sessions.
-  - **success:** She completes a full phase without opening a file, running a command, or being handed a second interface.
+  - **success:** She completes a full phase without *needing* to open a file, run a command, or use a second interface. Answering a direct technical question she asked for does not violate this.
 - **CAP-9**
   - **intent:** The agent explains where a new capability came from and why it is being added, before adding it.
   - **success:** Every tool or MCP server installed for her is preceded by a stated source and reason; nothing appears silently.
@@ -80,6 +80,8 @@ A vision to realize, with a person at the center of it. Carrie wants to make Tik
 - Question calibration is the product's quality bar, not render quality — see `question-calibration.md`.
 - The cut leaves a gap for the viewer to pause and guess. Existing videos in this trend are too fast to play along with, which is the defect these videos can fix.
 - BMAD structure runs inside the agent and is never surfaced to Carrie as commands to operate.
+- The agent does the technical work by default; Carrie never has to run anything to move a phase forward. When she asks a direct technical question, answer it — deflecting is its own form of talking down.
+- Never state an unverified package, command, URL, or setting. She may run what she is given and cannot tell an invented name from a real one.
 - The mindset argument is never delivered as a lecture; it is reached by doing the work — see `learning-outcomes.md`.
 - The surface Carrie works through is fixed before any sub-lesson is authored, and lessons are written against that one surface.
 - Early output quality is pre-framed as expected and uninformative, never apologized for.
@@ -91,7 +93,7 @@ A vision to realize, with a person at the center of it. Carrie wants to make Tik
 - A tool tour, or breadth coverage of the AI landscape.
 - Procedural recall. Carrie is not expected to reproduce the steps afterward, so the curriculum is not built to be memorized.
 - Teaching the mindset argument as stated content.
-- Carrie operating BMAD, a CLI, or any second interface.
+- Requiring Carrie to operate BMAD, a CLI, or a second interface to make progress. Answering her when she asks how something works is in scope, not a violation.
 - The street-interview variant of the format. A stills-and-voice pipeline cannot produce it, and staging it would depict interviews that never happened.
 - Elaborating the trivia format itself. The format is deliberately minimal; the difficulty lives entirely in question selection.
 - Carrie's adoption of AI. She may finish and decline to embrace it; the target is that she can see how it would help, not that she converts.
