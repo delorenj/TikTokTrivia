@@ -1,0 +1,14 @@
+{
+  "project_name": "TikTokTrivia",
+  "project_description": "",
+  "project_id": "tiktoktrivia",
+  "repo_path": "",
+  "ticket_provider": {
+    "type": "plane",
+    "workspace": "33god",
+    "identifier": "TIKT",
+    "board_id": "",
+    "board_url": ""
+  },
+  "agents": {}
+}
