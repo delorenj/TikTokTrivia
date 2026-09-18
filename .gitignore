@@ -3,4 +3,16 @@
 .env.*
 !.env.op
 /.agents/local.json
-/.agents/skills
+# Skillex-synced skills are inherited, not source -- ignore them.
+# EXCEPT the two that ARE this project's product: under AD-1 there is no
+# application tier, so the skills are the deliverable, and AD-10 requires them
+# committed (a skill left in the profile's disposable dir dies on rebuild).
+# Note the trailing /* -- git will not descend into a wholly-excluded directory,
+# so a bare `/.agents/skills` would make the negations below dead letters.
+# The first line overrides the machine-wide `.agents/skills/` exclude in
+# ~/.agents/git/ignore -- git will not descend into a wholly-excluded directory,
+# so without it the negations below are dead letters.
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/trivia-video/
+!/.agents/skills/carries-house-style/

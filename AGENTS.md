@@ -1,37 +1,48 @@
 <!-- bmad:context -->
-<!-- Verified 2026-09-16 against a324bfb. Managed by bmad-project-context; edits inside this block are replaced on refresh. Keep anything you want preserved outside the markers. -->
+<!-- Verified 2026-09-18 against 57f1afb + this session. Managed by bmad-project-context; edits inside this block are replaced on refresh. Keep anything you want preserved outside the markers. -->
 
 ## TikTokTrivia
 
-An automated pipeline that produces TikTok trivia videos end to end — question sourcing, art direction, stills, voice, render — and, equally, a phased curriculum that teaches Carrie, who is non-technical and new to AI, one concept per phase. Python for media generation, TypeScript for web surfaces; no application code exists yet, so the stack below is a decision, not a build. Planning artifacts land in `_bmad-output/planning-artifacts/`, project knowledge in `docs/`, and intent lives in `BRAINDUMP.md` until a spec replaces it.
+An automated way to produce TikTok trivia videos end to end — question sourcing, art direction, stills, voice, render — and, equally, a phased curriculum that teaches Carrie, who is non-technical and new to AI, one concept per phase. **There is no application tier and none is coming** (AD-1): the deliverable is a Hermes agent, Dumply, carrying an agent file and skills. Skills hold the opinionated process; the agent executes it with tools it already has. New capability arrives as a skill, an MCP server, or a shell call — never as a package with a lifecycle. Planning artifacts land in `_bmad-output/planning-artifacts/`, and `BRAINDUMP.md` is superseded by `_bmad-output/specs/spec-trivia-video-factory/`.
 
 ## Policy
 
 - Never publish to TikTok from code. The pipeline renders and stages; Carrie approves every post by hand.
 - Never bundle two new concepts into one phase — one tool, one idea, one working result. Pacing is the product here, not a nicety.
 - Carrie's interface is the Hermes agent. Never design a step that *requires* her to edit a file, run a command, or read this repo; answering a question she asked is fine.
+- Verify before naming. Any package, command, URL, model or setting stated to her — or written into a skill — gets checked with a tool first; if it can't be checked, say so plainly rather than filling the gap. A confident wrong name reaching someone who cannot tell it is wrong is this project's defining failure.
+- Write guardrails as the move to make, never as a bare prohibition. Rules phrased only as "never" have already failed twice here under social pressure (`7a0dc55`, `1957777`).
 
 ## Where things are
 
-- Hermes agent profile: `agents/hermes/pm/` — already on `PATH` via `mise.toml:5`, not created yet.
-- Curriculum and lesson material: `docs/` (BMAD `project_knowledge`), not created yet.
+- **The product** — `.agents/skills/trivia-video/` (the seven production steps, the freedom tiers, the handback contract) and `.agents/skills/carries-house-style/` (hers, filled by interviewing her during the look step). This directory is canonical and is on Dumply's load path as an absolute entry in `skills.external_dirs`.
+- **The curriculum** — `.agents/skills/trivia-video/references/curriculum.md`. Deliberately separate from the steps so it can be deleted when it expires without touching them.
+- Dumply's profile: `~/.hermes/profiles/dumply` on big-chungus, unit `hermes-dumply-gateway.service`, registered in `~/.hermes/agents-registry.yaml`. Not in this repo. `mise.toml:5` still puts `agents/hermes/pm` on `PATH`; that directory does not exist and nothing needs it.
+- Board: Plane **TIKT** in workspace `33god` — one ticket per video, columns are the seven steps in Carrie's words. Id and URL are in `.project.json`.
+- Artifacts: `s3://tiktoktrivia/<run-id>/` on `s3.delo.sh` via the `mc` alias `delo`. Never in this repo.
 - BMAD output: planning in `_bmad-output/planning-artifacts/`, implementation in `_bmad-output/implementation-artifacts/`.
 
 ## Running and verifying
 
-- TODO: no build, test, or render command exists yet. Stack is decided — Python for media generation, TypeScript for web surfaces — but tooling is not chosen. Replace this line on the first refresh after code lands.
+- There is nothing to build and no test runner, by design. Verification is a live exercise against Dumply over Telegram: run a video through all seven steps, then pressure-test the guardrails (ask for captions with no cut, ask it to post, ask for a name it can't verify) — twice each, because the second ask is where a weak rule folds.
 - Entering the directory fires three `mise` hooks automatically: agent-file symlinks, `op inject` of `.env.op` into `.env`, and CodeGraph install plus index. Don't reproduce their work by hand.
+- A skill is not installed until it appears in Dumply's index. Skills authored with Carrie are written here and committed in the same session, never left in the profile's disposable `skills/` directory.
 
 ## Conventions that differ from defaults
 
-- Name a phase's deliverable before starting it — the concrete artifact handed back, such as a sheet of questions, a screenplay, ten stills. A phase with no named artifact is not ready to run.
-- Match model cost to the phase: cheap models where the work is retrieval, like sourcing candidate questions; strong models only where judgment is the product, like difficulty calibration and art direction.
+- Name a step's handback before starting it — the concrete artifact returned. A step describable only by its activity is not ready to run.
+- A step names an artifact, not a performer. Dumply, Carrie, or both can perform any step and the spine does not change.
+- Match model cost to the work: cheap for retrieval (sourcing candidate questions), strong where judgment is the product (calibration, art direction). Routing everything to the frontier model is waste, not safety.
 - Trivia questions are calibrated, not collected. Target the band where a viewer knows the answer but has to reach for it; obscure is a failure, not a flex.
-- Prefer a walking skeleton — an end-to-end ugly video, stills plus TTS with no animation or captions — before polishing any single phase.
+- Walking skeleton before depth. Assemble runs at depth 0 — full length, ugly — before animation, captions or sound exist.
+- Position lives in a Plane state, never in a label. Labels on TIKT are bare descriptive words; nothing with a colon.
 
 ## Known pitfalls
 
 - Edit `AGENTS.md` only. `CLAUDE.md` and `GEMINI.md` are symlinks to it, and `.mise/scripts/link-agentfiles.sh` aborts if either becomes a real file.
-- The Plane board does not exist — `.project.json` declares identifier `TIKT` with an empty `board_id`. Create it before any ticket-driven work.
+- Ideogram **v3** via `fal-ai/ideogram/v3`, never v4 — v4's endpoint dropped every style parameter, and ten frames looking like one video is the whole requirement. Never the built-in image tool: it pins no model and exposes no reference image.
+- A Hermes delta list **replaces** rather than merges. Write `skills.external_dirs` and `trusted_project_dirs` as full lists; a partial one silently drops entries.
+- Dumply's own `agent-dumply` bank is identity only — its mission forbids repo facts. Project state goes to the `TikTokTrivia` bank via the `hindsight` CLI, which is not in the profile's automatic recall list and must be reached deliberately.
+- vox `/synthesize-url` links expire after 3600s. Download the bytes to the run prefix before anything renders, and never re-synthesize for a run that already has a cut.
 
 <!-- /bmad:context -->
