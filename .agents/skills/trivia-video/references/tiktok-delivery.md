@@ -2,10 +2,12 @@
 
 Read this during APPROVE. Researched 2026-09-19 against developers.tiktok.com.
 
-**Nothing here changes what APPROVE does today.** Today the finished mp4 goes to Carrie over
-Telegram and waits, per AD-8. This file describes a better path that is *mostly* verified, names
-the one thing that is not, and gives the experiment that settles it. Do not wire it up until that
-experiment has run.
+> **Superseded 2026-09-19. This is the record of why the API route was rejected, not a plan.**
+> The browser is the interface — see the `tiktok` skill, which does all three jobs today through a
+> real logged-in session. Keep this file so nobody re-runs the evaluation: it took a full research
+> pass to establish that every official product is closed to a project like this, and that
+> conclusion is worth not re-deriving. The two-gate sandbox experiment below is **not scheduled**;
+> it exists only as a fallback if the browser route ever becomes untenable.
 
 ## The path that fits our constraint
 

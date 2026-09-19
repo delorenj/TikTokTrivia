@@ -16,3 +16,4 @@
 /.agents/skills/*
 !/.agents/skills/trivia-video/
 !/.agents/skills/carries-house-style/
+!/.agents/skills/tiktok/

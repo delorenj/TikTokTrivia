@@ -15,7 +15,7 @@ An automated way to produce TikTok trivia videos end to end — question sourcin
 
 ## Where things are
 
-- **The product** — `.agents/skills/trivia-video/` (the seven production steps, the freedom tiers, the handback contract) and `.agents/skills/carries-house-style/` (hers, filled by interviewing her during the look step). This directory is canonical and is on Dumply's load path as an absolute entry in `skills.external_dirs`.
+- **The product** — `.agents/skills/tiktok/` (reaching TikTok at all), `.agents/skills/trivia-video/` (the seven production steps, the freedom tiers, the handback contract) and `.agents/skills/carries-house-style/` (hers, filled by interviewing her during the look step). This directory is canonical and is on Dumply's load path as an absolute entry in `skills.external_dirs`.
 - **The curriculum** — `.agents/skills/trivia-video/references/curriculum.md`. Deliberately separate from the steps so it can be deleted when it expires without touching them.
 - Dumply's profile: `~/.hermes/profiles/dumply` on big-chungus, unit `hermes-dumply-gateway.service`, registered in `~/.hermes/agents-registry.yaml`. Not in this repo. `mise.toml:5` still puts `agents/hermes/pm` on `PATH`; that directory does not exist and nothing needs it.
 - Board: Plane **TIKT** in workspace `33god` — one ticket per video, columns are the seven steps in Carrie's words. Id and URL are in `.project.json`.
@@ -43,7 +43,7 @@ An automated way to produce TikTok trivia videos end to end — question sourcin
 - Ideogram **v3** via `fal-ai/ideogram/v3`, never v4 — v4's endpoint dropped every style parameter, and ten frames looking like one video is the whole requirement. Never the built-in image tool: it pins no model and exposes no reference image.
 - A Hermes delta list **replaces** rather than merges. Write `skills.external_dirs` and `trusted_project_dirs` as full lists; a partial one silently drops entries.
 - Dumply's own `agent-dumply` bank is identity only — its mission forbids repo facts. Project state goes to the `TikTokTrivia` bank via the `hindsight` CLI, which is not in the profile's automatic recall list and must be reached deliberately.
-- There is **no legitimate automated route to other creators' TikTok data**. Research API is categorically closed to non-academic projects, Commercial Content API is EU ads only, Display API is her own account only, and scraping breaches ToS §3.4 with every Anthropic agent additionally under `Disallow: /` in `tiktok.com/robots.txt`. Use web search and her own watching; measure her own videos through the Display API once they exist. `references/format-study.md` is a finished one-time baseline, not a job to re-run.
+- **TikTok's official APIs are closed to this project and the browser is the interface.** Research API is categorically non-commercial, Commercial Content API is EU ads only, Display API is own-account only, and the Content Posting API needs an app review whose guidelines name this project shape as unacceptable. All three jobs — studying the format, reading her retention, staging a post — go through the `tiktok` skill and a real logged-in session. `trivia-video/references/tiktok-delivery.md` records why the API route was rejected so nobody re-derives it.
 - vox `/synthesize-url` links expire after 3600s. Download the bytes to the run prefix before anything renders, and never re-synthesize for a run that already has a cut.
 
 <!-- /bmad:context -->

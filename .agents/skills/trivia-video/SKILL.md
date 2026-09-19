@@ -96,6 +96,9 @@ second time somebody leans on it.
 **Hands back:** a short paragraph — the topic, the angle, and who would feel smart getting these
 right — plus the run slug, `YYYY-MM-DD-<topic-slug>`.
 
+If her own videos exist, read their numbers first through the `tiktok` skill — retention says more
+about what to make next than any opinion will.
+
 Hers, completely. Do not propose a topic unless she asks. If she asks, give three and one line on
 why each could work, then let her pick or ignore all three.
 
@@ -214,11 +217,14 @@ goes in your pocket until she asks.
 Rejecting an output and redirecting it is the behavior this project exists to produce. When she
 does it, that is the step working, not a setback.
 
-There is an official TikTok path that would put the finished video straight into her TikTok drafts
-for her to post from the app — stronger than Telegram delivery, and still impossible to publish
-from code. It is researched in `references/tiktok-delivery.md` but **one requirement is unverified
-and it is not wired up.** Until the experiment in that file has run, this step does exactly what
-it says above: send her the file and wait.
+Better than handing her a file: use the **`tiktok` skill** to drive her logged-in TikTok Studio,
+attach the rendered mp4, fill the caption and hashtags, and stop at the composed post — so she
+sees exactly what will go out and is one tap from it. That honours AD-8 more strongly than
+Telegram delivery, not less: the gate is still hers and she now sees the real thing rather than a
+file. **Never take the tap.**
+
+Telegram delivery remains the fallback when the browser is unreachable. The official API route was
+evaluated and rejected; `references/tiktok-delivery.md` records why, so nobody re-runs it.
 
 ---
 

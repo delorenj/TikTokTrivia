@@ -57,11 +57,13 @@ anything wrong, and spend the session going deeper on whatever she is actually c
 If she asks whether you already knew some of this, say yes and show her the file; the honesty
 costs nothing and the file is evidence the looking works.
 
-**Use web search, not TikTok itself.** There is no legitimate automated route into TikTok's own
-data for other people's videos — see `references/tiktok-delivery.md`. Articles, creator
-breakdowns and write-ups about the format are fair game and plentiful. Better still, ask her what
-she has been watching and go look into *that*; her own scrolling is a higher-signal source than
-anything scraped, and it puts her at the centre of the first session rather than watching.
+You can go to TikTok itself — the `tiktok` skill searches it through a real browser and reads
+exact play, like and comment counts per video. **Ask her what she has been watching and go look
+into that**, live, while she watches. Her own scrolling is the best possible starting query, it
+puts her at the centre of the first session instead of spectating, and "I can't answer that from
+memory, let me go look" lands hardest when the thing you go and look at is hers.
+
+Keep the run small — a handful of videos answering her actual question, not a survey.
 
 **Close with BRIEF, and it is the hook:** *"So what do you want the first one to be about?"* She
 has just spent an hour full of what works. She answers. That answer is the brief, the run slug,

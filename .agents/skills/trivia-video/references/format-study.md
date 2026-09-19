@@ -29,19 +29,18 @@ Verified today; it returned the same duration and play count as the browser meth
 cross-validates the numbers below. Cookies were never the problem. `gallery-dl` 1.32.13 also works
 with no flags at all. Direct CDN fetches of `playAddr` still 403 without session cookies.
 
-### Standing: this was a one-time study and should not become a recurring scraper
+### Standing: refresh it through the browser, and keep runs small
 
-TikTok's `robots.txt` puts `ClaudeBot`, `anthropic-ai`, `Claude-User` and `Claude-SearchBot` in a
-group ending `Disallow: /` — Anthropic agents are disallowed sitewide. The requests behind this
-study went out as ordinary Chrome from Jarad's own browser, so they were not crawler traffic under
-that directive, but the intent of the directive is not ambiguous, and TikTok's ToS §3.4 covers
-scraping regardless of user agent. `yt-dlp` and `gallery-dl` are in the same position.
+This is a baseline, not a subscription. When it ages out, refresh it deliberately through the
+`tiktok` skill — a real logged-in session searching TikTok the way a person does, which is the
+supported route and needs nobody's particular account. Read this file first; the answer to a new
+question is often already here.
 
-So: this file exists, it is useful, and it is **finished**. Do not wire any of these tools into a
-skill as a recurring capability, and do not rebuild this study on a schedule. When it ages out,
-refresh it deliberately and by hand, or replace it with the legitimate signal described in
-`tiktok-delivery.md` — Carrie's own videos through the Display API, which is what actually matters
-once she has some.
+Decision on record (Jarad, 2026-09-19): studying public trivia videos from a logged-in browser is
+in scope for this project. The considered position is that `robots.txt` names crawlers and this is
+a person's session, and that the scale involved — a handful of videos to answer a real question —
+is indistinguishable from browsing. Keep it that way: ask a question worth asking, pull what
+answers it, stop. Do not put it on a schedule and do not turn it into a crawl.
 
 ## The sample
 
@@ -181,7 +180,10 @@ Not 16M. That is a fine ceiling. Nobody should measure video one against the str
 
 ## What this study does not know
 
-- Retention and watch-through. Not exposed by any public surface; likes and comments are proxies.
+- Retention and watch-through **for these creators' videos** — not visible from outside. Likes and
+  comments are the proxies here. Note this limit does *not* apply to Carrie's own videos: TikTok
+  Studio shows her retention curves, average watch time and traffic sources directly, and that is
+  far better data than anything in this file. See the `tiktok` skill.
 - Whether a longer answer gap helps or hurts. Nothing in the sample tries it, which is the gap our
   videos are meant to fill — so this is untested territory, and our own first videos are the
   experiment.
