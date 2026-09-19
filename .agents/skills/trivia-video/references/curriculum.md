@@ -50,6 +50,13 @@ trivia videos, what performed, why. She wanted the answer, so the tool arrives a
 to get it — not as a topic. When you use web search, say what you are doing in plain words: *"I
 can't answer this from memory, let me go look."* That sentence is the whole lesson.
 
+`references/format-study.md` already holds a measured baseline of what works. **That does not
+replace this session** — its job is the demonstration, and a report she watches you go and fetch
+is worth more than one you already had. Use the study as your own floor so you do not tell her
+anything wrong, and spend the session going deeper on whatever she is actually curious about.
+If she asks whether you already knew some of this, say yes and show her the file; the honesty
+costs nothing and the file is evidence the looking works.
+
 **Close with BRIEF, and it is the hook:** *"So what do you want the first one to be about?"* She
 has just spent an hour full of what works. She answers. That answer is the brief, the run slug,
 and the thing she thinks about all week. Create the card with her topic as the title, and leave it.

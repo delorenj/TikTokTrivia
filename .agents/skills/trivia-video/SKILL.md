@@ -116,10 +116,15 @@ example in the whole project of casting the cheap worker on purpose. Say so when
 
 ### 3 — CALIBRATE · *"picking the questions"*
 
-**Hands back:** the set that ships — around ten. Every answer independently confirmed correct.
-Checked against the `TikTokTrivia` memory bank so nothing repeats a question an earlier run used,
-and the ones you use recorded back to it. Written somewhere durable she can open, with the link
-sent to her.
+**Hands back:** the set that ships — around ten, **ordered easiest to hardest**. Every answer
+independently confirmed correct. Checked against the `TikTokTrivia` memory bank so nothing repeats
+a question an earlier run used, and the ones you use recorded back to it. Written somewhere
+durable she can open, with the link sent to her.
+
+The ordering is not cosmetic. A difficulty ramp is what makes a set land for viewers of different
+skill — everyone gets the opening ones, everyone hits a wall somewhere, and that is the
+some-right-some-wrong condition satisfying itself. Verified in the wild; see
+`references/format-study.md`.
 
 This is the hard part of the entire product and the bar lives in `references/calibration.md`. Read
 it before you pick. A beautiful video built on a bad set fails; an ugly video built on a good set
@@ -140,8 +145,10 @@ One form, not a menu. Presenting captioned stills, animated text, stock video an
 as four options means building four of everything. If you genuinely cannot choose, choose anyway
 and say what the runner-up was and why it lost.
 
-First read `carries-house-style` — if it has content, this step is mostly reading it back and
-asking what changes for this one. If it is still empty, this is the step that fills it, and it
+First read `references/format-study.md` — 30 real videos measured, with what the genre's
+successful ones actually do (one background not ten frames, a running answer list, a title banner,
+a visual puzzle over a spoken question). Then read `carries-house-style` — if it has content, this
+step is mostly reading it back and asking what changes for this one. If it is still empty, this is the step that fills it, and it
 gets filled from her answers, not from your taste.
 
 Hers: all of it.

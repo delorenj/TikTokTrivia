@@ -12,11 +12,19 @@ A set is calibrated when a viewer **gets some right and some wrong in the same s
 - The feeling you are aiming at is the excitement of knowing the answer — which requires that
   knowing it was not guaranteed.
 
-**The one strategy available:** niche areas people believe they are smart about *because* they know
-that area. A question inside someone's self-identified domain is the one they are thrilled to get
-right, and it is the only known way a set is hard and satisfying at once rather than hard and
-alienating. This is a heuristic and it has not been tested. It is also the only guidance that
-exists for the hardest part of the product, so use it and watch what happens.
+**Strategy one — niche domains.** Pick areas people believe they are smart about *because* they
+know that area. A question inside someone's self-identified domain is the one they are thrilled to
+get right. This started as an untested hunch; it is no longer. Every one of the four
+highest-comment-rate videos in `references/format-study.md` is a niche domain -- the periodic
+table, physics terms, human body parts, farm animals -- and none of them is "general knowledge."
+Treat it as the default, not the experiment.
+
+**Strategy two — order easiest to hardest.** The band asks an unanswerable question: hard enough
+for *whom*? Viewers differ, so no single difficulty satisfies it. A ramp does not have to answer
+it. Order the shipped set from easiest to hardest and every viewer gets the opening ones and hits
+a wall somewhere, which IS some-right-some-wrong, self-calibrating across skill levels. Verified
+in the wild (a periodic-table set revealing Carbon, Silver, Gold, Oxygen, Copper in that order);
+some creators print an EASY/MEDIUM/HARD/EXPERT ladder on screen beside the numbers.
 
 ## The shape of the step
 
