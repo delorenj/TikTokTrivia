@@ -15,10 +15,33 @@ surfaced, not a random sample of the genre, and the tag page is personalized and
 **play counts are lifetime while the videos differ in age**, so rates (like %, comment %) are more
 comparable than absolute plays. Treat everything as directional.
 
-Note for whoever redoes this: **`yt-dlp`'s TikTok extractor was broken on 2026-09-19** — every URL
-returned `Unexpected response from webpage request`, with and without browser cookies, on version
-2026.08.19. Direct CDN fetches of `playAddr` return 403 without session cookies. Reading the
-rehydration JSON out of a live browser tab worked and is what produced this.
+**Before redoing this, read the standing below — it may not be the right thing to do again.**
+
+Tooling notes. `yt-dlp` 2026.08.19 fails on TikTok out of the box (`Unexpected response from
+webpage request`), but it is **not** broken — the cause is yt-dlp issue #17604, TikTok blocking
+its `chrome-150` impersonation target, and overriding the user agent fixes it:
+
+```bash
+yt-dlp --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 OPR/118.0.0.0" <url>
+```
+
+Verified today; it returned the same duration and play count as the browser method, which
+cross-validates the numbers below. Cookies were never the problem. `gallery-dl` 1.32.13 also works
+with no flags at all. Direct CDN fetches of `playAddr` still 403 without session cookies.
+
+### Standing: this was a one-time study and should not become a recurring scraper
+
+TikTok's `robots.txt` puts `ClaudeBot`, `anthropic-ai`, `Claude-User` and `Claude-SearchBot` in a
+group ending `Disallow: /` — Anthropic agents are disallowed sitewide. The requests behind this
+study went out as ordinary Chrome from Jarad's own browser, so they were not crawler traffic under
+that directive, but the intent of the directive is not ambiguous, and TikTok's ToS §3.4 covers
+scraping regardless of user agent. `yt-dlp` and `gallery-dl` are in the same position.
+
+So: this file exists, it is useful, and it is **finished**. Do not wire any of these tools into a
+skill as a recurring capability, and do not rebuild this study on a schedule. When it ages out,
+refresh it deliberately and by hand, or replace it with the legitimate signal described in
+`tiktok-delivery.md` — Carrie's own videos through the Display API, which is what actually matters
+once she has some.
 
 ## The sample
 

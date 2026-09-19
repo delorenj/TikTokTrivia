@@ -131,3 +131,76 @@ delivery mechanism.
 
 **Until both gates pass, APPROVE keeps doing what it does now: send her the mp4 over Telegram and
 wait.**
+
+---
+
+# Reading data back from TikTok
+
+Researched the same day. The short version: **you can measure Carrie's own videos officially, and
+you cannot measure anyone else's by any legitimate route.**
+
+## Her own videos — yes, and this is the one that matters
+
+**Display API**, scopes `user.info.basic` and `video.list`. `POST /v2/video/list/` returns up to
+20 videos per page, 600 requests/min, and each Video Object carries `view_count`, `like_count`,
+`comment_count`, `share_count`, `duration`, `create_time`, `share_url` and `is_aigc`.
+
+Her videos only — which is exactly the feedback loop worth having. Once a few are posted, this
+turns "did that one work?" from a guess into a number, and it is the natural input to the next
+BRIEF. It is also the only performance data in this whole product that we can take forever without
+asking anyone's permission.
+
+Note `is_aigc` on the Video Object: TikTok tracks AI-generated-content status per video. That is
+the surface behind the AI-disclosure question the spine has deferred.
+
+## Everyone else's videos — no legitimate route exists
+
+| Route | Verdict |
+|---|---|
+| **Research API** | **No, categorically.** Eligibility requires being *"independent of commercial interests and able to conduct research on a not-for-profit or non-commercial basis in pursuit of a public-interest mission."* A solo hobbyist project does not qualify and no amount of paperwork changes that. |
+| **Commercial Content API** | **No value.** EU ad library only — paid ads, not organic trivia videos. |
+| **Display API** | Her own authorized account only. |
+| **Scraping** (`yt-dlp`, `gallery-dl`, browser automation) | Works, and violates ToS §3.4. `robots.txt` additionally puts every Anthropic agent under `Disallow: /`. |
+
+**Consequence for the product.** The spine asks whether the creative step needs real TikTok access
+to study what performs, and the answer is that it cannot have it on an ongoing automated basis.
+That is a constraint, not a defeat, and the honest replacements are better than they sound:
+
+- `references/format-study.md` is a measured one-time baseline. It is done. Do not regenerate it
+  on a schedule.
+- Ordinary web search over articles and creator breakdowns is entirely legitimate and is the right
+  tool for "what's working in this format lately."
+- **Carrie watching TikTok herself** and telling Dumply what she liked is legitimate, free, higher
+  signal than any scrape, and is a better lesson than watching a machine do it.
+- Once she has videos, the Display API loop above replaces studying strangers with studying
+  herself, which is the thing that was actually wanted.
+
+## Other verified constraints
+
+- **Do not rely on webhooks.** TikTok's Events surface is scoped to Video Kit, not to the posting
+  flow. Poll `POST /v2/post/publish/status/fetch/` instead, at most 30 requests/min.
+- **There is no mature client library.** The most-starred wrapper for the official API sits at
+  14 stars. Call the endpoints directly — which is what AD-1 wants anyway: a shell call, not a
+  package with a lifecycle.
+- **Token lifetimes**: access 24h, refresh 365d and rotating. Revocation is event-driven
+  (`authorization.removed`, reasons 0–5), not scheduled. Whether editing sandbox configuration
+  invalidates existing tokens is **UNVERIFIED**.
+- Sandbox target-user changes can take **up to an hour** to appear after a page refresh. Do not
+  conclude the experiment failed in the first ten minutes.
+
+## Sources
+
+All fetched live 2026-09-19 on developers.tiktok.com unless noted.
+
+| Fact | Page |
+|---|---|
+| inbox init endpoint, `video.upload`, 6 req/min | `/doc/content-posting-api-reference-upload-video/` |
+| `SEND_TO_USER_INBOX`, `PUBLISH_COMPLETE` | `/doc/content-posting-api-reference-get-video-status/` |
+| sandbox: no review, 5 sandboxes, 10 target users, the "public videos" exclusion | `/doc/add-a-sandbox/` |
+| the private-tool prohibition | `/doc/content-sharing-guidelines/` |
+| scope strings | `/doc/tiktok-api-scopes/` |
+| authorize + token endpoints | `/doc/login-kit-web/`, `/doc/oauth-user-access-token-management/` |
+| Video Object stat fields, `is_aigc` | `/doc/tiktok-api-v2-video-object/` |
+| Research API eligibility | `developers.tiktok.com/products/research-api/` |
+| `Disallow: /` for Anthropic agents | `https://www.tiktok.com/robots.txt` (verified directly) |
+| yt-dlp UA workaround | `github.com/yt-dlp/yt-dlp` issue #17604 (open, updated 2026-09-16) |
