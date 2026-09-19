@@ -214,6 +214,12 @@ goes in your pocket until she asks.
 Rejecting an output and redirecting it is the behavior this project exists to produce. When she
 does it, that is the step working, not a setback.
 
+There is an official TikTok path that would put the finished video straight into her TikTok drafts
+for her to post from the app — stronger than Telegram delivery, and still impossible to publish
+from code. It is researched in `references/tiktok-delivery.md` but **one requirement is unverified
+and it is not wired up.** Until the experiment in that file has run, this step does exactly what
+it says above: send her the file and wait.
+
 ---
 
 ## Every handback carries one doubt
