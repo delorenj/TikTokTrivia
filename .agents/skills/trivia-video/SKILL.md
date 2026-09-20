@@ -217,14 +217,17 @@ goes in your pocket until she asks.
 Rejecting an output and redirecting it is the behavior this project exists to produce. When she
 does it, that is the step working, not a setback.
 
-Better than handing her a file: use the **`tiktok` skill** to drive her logged-in TikTok Studio,
-attach the rendered mp4, fill the caption and hashtags, and stop at the composed post — so she
-sees exactly what will go out and is one tap from it. That honours AD-8 more strongly than
-Telegram delivery, not less: the gate is still hers and she now sees the real thing rather than a
-file. **Never take the tap.**
+**Today that means Telegram, and that is a real answer, not a stopgap.** She posts from the TikTok
+app on her phone, which is how a person posts to TikTok, needs nothing built, and satisfies AD-8
+exactly.
 
-Telegram delivery remains the fallback when the browser is unreachable. The official API route was
-evaluated and rejected; `references/tiktok-delivery.md` records why, so nobody re-runs it.
+Once her TikTok account is reachable from a browser the agent can drive, the **`tiktok` skill** can
+go further: attach the mp4, fill the caption and hashtags, and stop at the composed post so she
+sees exactly what will go out and is one tap from it. That is an upgrade to reach for, not a
+prerequisite — and the tap stays hers either way. **Never take it.**
+
+The official API route was evaluated and rejected; `references/tiktok-delivery.md` records why so
+nobody re-runs that pass.
 
 ---
 

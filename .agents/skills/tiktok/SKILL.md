@@ -12,11 +12,20 @@ that loop.
 
 What a real logged-in browser gives you, all verified working on 2026-09-19:
 
-| Job | Needs whose account? |
-| --- | --- |
-| Search and study what performs | **Anyone's.** Any logged-in session can search. |
-| Read watch retention and traffic sources | Hers — it is her own analytics |
-| Put a finished video in front of her to post | Hers |
+| Job | Needs | Working today? |
+| --- | --- | --- |
+| Search and study what performs | **any** logged-in session | **Yes** — via ego on the Mac |
+| Read her watch retention and traffic | her *account*, reachable by the agent | Not yet — see setup |
+| Get a finished video posted | her *account*, plus someone to tap Post | Telegram → she posts from her phone |
+
+**Read that middle column carefully: two of these need her TikTok account, not her hardware.**
+Nobody has to automate her computer. The account has to be reachable from a browser the agent can
+drive, which is a one-time login, not an install on her machine.
+
+Known and not to be rediscovered: **ego lite is macOS-only.** It runs on `carries-macbook-air`,
+which despite the name is Jarad's Mac and carries *his* TikTok login. Carrie's machine is
+`glassttra`, a Windows box. Ego cannot drive it and never will. Any plan that depends on ego
+reaching her laptop is wrong before it starts.
 
 ## How you drive it
 
@@ -80,7 +89,8 @@ like it: a handful of videos on a question worth asking, not a crawl.
 
 ## Job 2 — how her own videos did
 
-TikTok Studio, her session. `https://www.tiktok.com/tiktokstudio/analytics`.
+TikTok Studio, **her** session — not the Mac's, which is Jarad's.
+`https://www.tiktok.com/tiktokstudio/analytics`.
 
 This is the richest signal in the entire project and **no API offers it.** Overview, Content,
 Viewers and Followers tabs; per-video watch retention and average watch time; traffic sources
@@ -97,6 +107,9 @@ starts from it.
 
 ## Job 3 — putting a finished video up
 
+*Available once her account is reachable; until then see the setup section — Telegram plus her
+phone is the working default and there is no rush.*
+
 **Never click Post.** Not once, not to be helpful, not because it is obviously ready.
 
 Drive `https://www.tiktok.com/tiktokstudio/upload`. There is a real `input[type=file]` accepting
@@ -111,25 +124,29 @@ Getting her all the way to a one-tap decision is the whole job; taking the tap i
 If she says "just post it," the answer is that you have set it up and it is one tap, and you would
 rather she took that tap. Then leave it set up.
 
-## Setting someone up for the first time
+## Getting her account reachable — an open setup question
 
-She needs a browser carrying her TikTok login that the agent can reach. That is a one-time setup,
-and it is the one place this project asks her to install something.
+**What is needed:** her TikTok logged into some browser the agent can drive. **What is not
+needed:** software on her laptop. Do not propose installing anything on `glassttra` to solve this;
+it is the wrong shape of answer and ego could not use it anyway.
 
-That does not break the rule that she never *needs* to run a command to move a phase forward,
-because posting was always going to be hers — the setup serves the one step that is hers by
-design. Frame it that way and it reads as handing her the keys rather than homework.
+This is unresolved and should be settled with Jarad, not improvised mid-session. It is a
+five-minute job whenever she is next around, and she has to be present for it because only she can
+log into her own account. What is actually being chosen is *where* that login lives.
 
-Walk her through it conversationally, one step at a time, waiting after each. Never send a list.
-Tell her plainly what it does before she installs anything: it is a browser that stays logged into
-her accounts so the agent can work in them, it runs on her machine, and she can watch it.
+**Until it is settled, posting works the ordinary way and that is fine.** Render the video, send it
+to her over Telegram, and she posts it from the TikTok app on her phone — which is how a person
+posts to TikTok anyway, needs nothing built, and satisfies AD-8 exactly. The staging path in Job 3
+is an upgrade to reach for once her session is reachable, not a prerequisite for shipping video
+one.
 
-When she is set up, **verify before believing it**: load TikTok Studio and confirm the upload page
-renders. A login that half-worked looks exactly like one that worked until the moment it matters.
+The analytics in Job 2 are the reason to bother settling it. Nobody is going to read retention
+curves by hand every week, and that is the number that says what to make next.
 
-Worth knowing: the bridge currently points at one specific Mac. If she works somewhere else, that
-is a real question to settle at setup time rather than discover mid-session — check
-`ego-browser doctor` names the machine you expect.
+When it is set up, **verify rather than assume**: load TikTok Studio, confirm the upload page
+renders, and confirm the account shown is *hers*. A login that half-worked looks exactly like one
+that worked, right up until it matters. `ego-browser doctor` names which machine the bridge points
+at — check it is the one you think.
 
 ## The gate, in one line
 
