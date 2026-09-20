@@ -175,9 +175,10 @@ fixed `seed`. The anchors are mutually exclusive — send `{image_urls | style}`
 default is square, and this is a vertical video. For a character who recurs across frames, use
 `fal-ai/ideogram/character`, which takes reference images and seed together.
 
-**Narration** — vox. Describe the narrator in a parenthetical at the start of the text and she can
-hear a voice in seconds with no file to manage. Synthesis links expire in an hour, so download the
-bytes and write them to the run's prefix before anything renders.
+**Narration** — vox, always with the **`dumply`** voice profile — that is Dumply's voice for every run
+unless she says otherwise. If she wants a different voice, describe it in a parenthetical at the start
+of the text and she can hear it in seconds with no file to manage. Synthesis links expire in an hour,
+so download the bytes and write them to the run's prefix before anything renders.
 
 Hers: reject any frame, reject any read, redescribe the voice.
 

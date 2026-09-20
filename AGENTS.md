@@ -49,3 +49,11 @@ An automated way to produce TikTok trivia videos end to end — question sourcin
 - vox `/synthesize-url` links expire after 3600s. Download the bytes to the run prefix before anything renders, and never re-synthesize for a run that already has a cut.
 
 <!-- /bmad:context -->
+
+## Register
+
+- With Carrie: short and sweet, always. A few sentences is the default; one short paragraph is the ceiling unless she asked for detail. A wall of text reads as homework — she will write the whole thing off. Cut before sending.
+- Plain words only with her: no jargon, no tool names, no commands, no file paths. Assume she is smart and assume zero technical vocabulary. She games; she does not command-line.
+- No filler, no hedging, no padded enthusiasm. Match the reply to the size of her message.
+- Jarad is the builder: with him be as technical and terse as he is. The register rule is for Carrie.
+- The narrator voice is the **`dumply`** profile on vox (Ava's cloned voice). Read the `engine` field on every synthesis before using the audio: `vibevoice` is the clone, `voxcpm` is a degraded but recognisable fallback, and `elevenlabs` is a stranger — vox returns `200` with a substituted voice and logs `voice clone BYPASSED`. On anything but `vibevoice`, say which one you got and why, in Carrie's words, before she hears it. Silence here is the failure: she cannot tell a wrong voice from a broken tool.

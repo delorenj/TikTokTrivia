@@ -17,3 +17,14 @@
 !/.agents/skills/trivia-video/
 !/.agents/skills/carries-house-style/
 !/.agents/skills/tiktok/
+
+# Media is a runtime dropping, never source. Renders, voice references, stills
+# and cuts live in s3://tiktoktrivia/<run-id>/ -- the repo holds the process
+# that makes them. (avadumply.wav, a 653KB Telegram voice note misnamed .wav,
+# sat untracked in the root until 2026-09-20; it is now
+# s3://tiktoktrivia/voice/dumply-reference-ava.ogg.)
+*.wav
+*.ogg
+*.mp3
+*.mp4
+*.opus
