@@ -12,20 +12,19 @@ that loop.
 
 What a real logged-in browser gives you, all verified working on 2026-09-19:
 
-| Job | Needs | Working today? |
+| Job | Needs | Where it comes from |
 | --- | --- | --- |
-| Search and study what performs | **any** logged-in session | **Yes** — via ego on the Mac |
-| Read her watch retention and traffic | her *account*, reachable by the agent | Not yet — see setup |
-| Get a finished video posted | her *account*, plus someone to tap Post | Telegram → she posts from her phone |
+| Search and study what performs | **any** logged-in session | Available now — nothing of hers required |
+| Get a finished video posted | her, tapping Post | Her phone. Nothing to set up. |
+| Read her watch retention and traffic | her account, in a browser you can drive | **A lesson**, once she has a video worth measuring |
 
-**Read that middle column carefully: two of these need her TikTok account, not her hardware.**
-Nobody has to automate her computer. The account has to be reachable from a browser the agent can
-drive, which is a one-time login, not an install on her machine.
+Two of these need her TikTok *account*; none of them needs her *hardware*. Nobody automates her
+laptop.
 
-Known and not to be rediscovered: **ego lite is macOS-only.** It runs on `carries-macbook-air`,
-which despite the name is Jarad's Mac and carries *his* TikTok login. Carrie's machine is
-`glassttra`, a Windows box. Ego cannot drive it and never will. Any plan that depends on ego
-reaching her laptop is wrong before it starts.
+Known, and not to be rediscovered: **ego lite is macOS-only.** It runs on `carries-macbook-air`,
+which despite the name is Jarad's Mac carrying *his* login. Carrie's machine is `glassttra`,
+Windows. Ego cannot drive it and never will. Any plan depending on ego reaching her laptop is
+wrong before it starts.
 
 ## How you drive it
 
@@ -107,8 +106,8 @@ starts from it.
 
 ## Job 3 — putting a finished video up
 
-*Available once her account is reachable; until then see the setup section — Telegram plus her
-phone is the working default and there is no rush.*
+*Her phone is the default and always will be — see the section on connecting her account for why
+this is an upgrade rather than a requirement. Use this only once she has chosen to connect one.*
 
 **Never click Post.** Not once, not to be helpful, not because it is obviously ready.
 
@@ -124,29 +123,38 @@ Getting her all the way to a one-tap decision is the whole job; taking the tap i
 If she says "just post it," the answer is that you have set it up and it is one tap, and you would
 rather she took that tap. Then leave it set up.
 
-## Getting her account reachable — an open setup question
+## Connecting her account is a lesson, not a prerequisite
 
-**What is needed:** her TikTok logged into some browser the agent can drive. **What is not
-needed:** software on her laptop. Do not propose installing anything on `glassttra` to solve this;
-it is the wrong shape of answer and ego could not use it anyway.
+She will not have any of this set up. That is correct and expected — she is being taught, and
+setup she was walked through is worth more than setup she was handed.
 
-This is unresolved and should be settled with Jarad, not improvised mid-session. It is a
-five-minute job whenever she is next around, and she has to be present for it because only she can
-log into her own account. What is actually being chosen is *where* that login lives.
+**Never do it for her, and never ask someone else to do it for her.** Logging her in on her behalf
+does not save a step; it deletes one. It is also the single best demonstration available of what
+"giving the AI a way to reach something" actually means, because she watches a capability appear
+and then immediately uses it.
 
-**Until it is settled, posting works the ordinary way and that is fine.** Render the video, send it
-to her over Telegram, and she posts it from the TikTok app on her phone — which is how a person
-posts to TikTok anyway, needs nothing built, and satisfies AD-8 exactly. The staging path in Job 3
-is an upgrade to reach for once her session is reachable, not a prerequisite for shipping video
-one.
+**Do not manufacture a setup step for posting.** She posts from the TikTok app on her phone, which
+is how a person posts to TikTok. It needs nothing built and it satisfies AD-8 exactly. Anyone who
+finds themselves designing a login flow so that a video can be posted has taken a wrong turn.
 
-The analytics in Job 2 are the reason to bother settling it. Nobody is going to read retention
-curves by hand every week, and that is the number that says what to make next.
+The lesson that *is* worth teaching is connecting her account so her own numbers can be read —
+and it teaches best **after her first video is live**, when the payoff is immediate and concrete:
+*"want to see what it actually did?"* Before that there is nothing to look at and it is homework.
 
-When it is set up, **verify rather than assume**: load TikTok Studio, confirm the upload page
-renders, and confirm the account shown is *hers*. A login that half-worked looks exactly like one
-that worked, right up until it matters. `ego-browser doctor` names which machine the bridge points
-at — check it is the one you think.
+How to run it:
+
+- One step at a time, waiting after each. Never send her a list.
+- Say what a thing does before she installs or opens it, in plain words — a browser that stays
+  signed in so you can look things up with her, on a machine she can watch.
+- Let her do the typing. Her password is hers and you should never see it, ask for it, or offer to
+  handle it.
+- A login challenge, a code, a captcha — hers to clear, always. Wait, do not route around it.
+- **Verify rather than assume** at the end: load TikTok Studio, confirm the page renders, and
+  confirm the account shown is *hers*. A half-worked login looks exactly like a working one right
+  up until it matters. `ego-browser doctor` names which machine the bridge points at.
+
+If she does not want to do it, that is a complete answer. Telegram and her phone keep working and
+nothing downstream breaks.
 
 ## The gate, in one line
 

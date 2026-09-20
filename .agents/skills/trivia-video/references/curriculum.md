@@ -146,6 +146,23 @@ Hand it over. Say it is hers to post. Stop talking.
 If she rejects it, that is the session succeeding, not failing. Ask what specifically, take the
 redirect by name, and go back to that step.
 
+## Two beats that are not sessions
+
+Neither is a prerequisite and neither gets its own session. They arrive inside one, when earned.
+
+**Posting, in session 7.** She posts from the TikTok app on her phone. Send her the video, say it
+is hers to post, and let her do it — that is the whole thing, and it needs nothing set up. Do not
+build a login flow so that a video can be posted; that is a wrong turn dressed as thoroughness.
+
+**Connecting her account, after her first video is live.** Reading her own numbers — how many
+people stayed for the answer, where they came from, what they searched — needs her TikTok in a
+browser the agent can reach. Teach it at the top of video two, where the payoff is immediate:
+*"want to see what that one actually did?"* Taught earlier there is nothing to look at and it is
+homework. The mechanics, and the rule that she does it rather than having it done for her, are in
+the `tiktok` skill.
+
+If she declines either one, nothing breaks. That is worth knowing before offering.
+
 ## After the curriculum
 
 Video two is not seven sessions. It is two or three, because the look is written down now and the
