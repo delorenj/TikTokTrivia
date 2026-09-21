@@ -175,10 +175,16 @@ fixed `seed`. The anchors are mutually exclusive — send `{image_urls | style}`
 default is square, and this is a vertical video. For a character who recurs across frames, use
 `fal-ai/ideogram/character`, which takes reference images and seed together.
 
-**Narration** — vox, always with the **`dumply`** voice profile — that is Dumply's voice for every run
-unless she says otherwise. If she wants a different voice, describe it in a parenthetical at the start
-of the text and she can hear it in seconds with no file to manage. Synthesis links expire in an hour,
-so download the bytes and write them to the run's prefix before anything renders.
+**Narration** — Cartesia, model `sonic-3.6`, voice **`tanner`** — that is Dumply's voice for every run
+unless she says otherwise, and it is the same voice Dumply speaks with in chat. If she wants a
+different voice, describe it and she can hear it in seconds with no file to manage. Cartesia returns
+real bytes rather than an expiring link, so write them straight to the run's prefix.
+
+Two things that will bite. Cartesia can only return `wav`, `mp3` or `raw` — asking for `ogg` or
+`opus` is a `400 unsupported format`, so request 48 kHz `pcm_s16le` and let ffmpeg make the Opus.
+And **both** Cartesia voices called "Tanner" report the name `Tanner` in the API — the "Upbeat
+Assistant" and "Laidback Spirit" labels are playground UI text, not API fields — so select by id,
+never by name. Hers is the upbeat one, `710feaa3-b550-42f3-b3eb-6f37f2a7cc0a`.
 
 Hers: reject any frame, reject any read, redescribe the voice.
 

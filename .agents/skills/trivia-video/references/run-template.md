@@ -26,7 +26,7 @@ House style: <read from carries-house-style | written this run | not yet>
 ## Generation
 Stills: fal-ai/ideogram/v3 · anchor: <image_urls from frame 1 | style_codes> · seed: <n>
         image_size: <explicit value> · rendering_speed: <value>
-Narration: vox · voice: <description used> · bytes at narration/qNN.wav
+Narration: cartesia · model: sonic-3.6 · voice id: <uuid used> · bytes at narration/qNN.wav
 
 ## Cuts
 cuts/<name>-00.mp4  depth 0  <timestamp>   <-- must exist before any depth 1
