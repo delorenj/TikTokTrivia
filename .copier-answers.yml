@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
 _src_path: /home/delorenj/code/33GOD/pjangler/templates/commonproject
-project_description: ''
+project_description: An automated pipeline that produces TikTok trivia videos end to end, and the curriculum that teaches Carrie AI one concept per phase while it does.
 project_name: TikTokTrivia
 ticket_provider: plane

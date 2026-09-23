@@ -2,13 +2,13 @@
   "project_name": "TikTokTrivia",
   "project_description": "An automated pipeline that produces TikTok trivia videos end to end, and the curriculum that teaches Carrie AI one concept per phase while it does.",
   "project_id": "tiktoktrivia",
-  "repo_path": "",
+  "repo_path": "/home/delorenj/code/TikTokTrivia",
   "ticket_provider": {
     "type": "plane",
     "workspace": "33god",
     "identifier": "TIKT",
     "board_id": "3e35184f-9cf6-4b0a-bf42-46a5a8e142e1",
-    "board_url": "https://plane.delo.sh/33god/projects/3e35184f-9cf6-4b0a-bf42-46a5a8e142e1/issues/"
+    "state": "linked"
   },
   "agents": {}
 }

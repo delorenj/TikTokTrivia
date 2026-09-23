@@ -22,14 +22,11 @@ _.file = [".env"]
 # every  path is single-quoted so it survives a space in the
 # project path — mise runs each `script` via `sh -c`.
 [[hooks.enter]]
-script = "'{{config_root}}/.mise/scripts/link-agentfiles.sh' '{{config_root}}'"
+run = "'{{config_root}}/.mise/scripts/link-agentfiles.sh' '{{config_root}}'"
 [[hooks.enter]]
-# Atomic (PJAN-24/PJAN-57): shell complexity lives in the managed script so
-# mise never interpolates temporary variables. The script uses mktemp, traps
-# cleanup, and replaces .env only after op inject succeeds.
-script = "'{{config_root}}/.mise/scripts/materialize-env.sh'"
+run = "'{{config_root}}/.mise/scripts/materialize-env.sh'"
 [[hooks.enter]]
-script = "[ -f '{{config_root}}/.mise/scripts/codegraph.sh' ] && '{{config_root}}/.mise/scripts/codegraph.sh' || true"
+run = "[ -f '{{config_root}}/.mise/scripts/codegraph.sh' ] && '{{config_root}}/.mise/scripts/codegraph.sh' || true"
 
 [[watch_files]]
 patterns = ["AGENTS.md"]
@@ -40,10 +37,37 @@ description = "Symlink all agent files to AGENTS.md"
 run = "'{{config_root}}/.mise/scripts/link-agentfiles.sh' '{{config_root}}'"
 
 [tasks."skills:sync"]
-description = "Apply this project's declared skills with Skillex"
-tools = { "npm:@delorenj/skillex" = "0.1.1" }
+description = "Reconcile this project's selected skills"
+tools = { "npm:@delorenj/skillex" = { version = "0.1.1", allow_low_downloads = true }, node = "24" }
 run = "skillex sync --scope project --project '{{config_root}}'"
 
 [tasks."hindsight:setup"]
 description = "Provision this dev's shared project Hindsight key from 1Password into .env (op read; upserts those two keys, leaves the rest of .env intact)"
 run = "'{{config_root}}/.mise/scripts/hindsight-setup.sh'"
+
+# >>> mise-versioning >>>  (managed block — do not edit by hand; re-run init to update)
+[tasks."version"]
+description = "Print the current version (vX.Y.Z)"
+run = "'{{config_root}}/.mise/scripts/versioning.sh' current"
+
+[tasks."version:bump"]
+description = "Bump patch version: vX.Y.Z -> vX.Y.(Z+1)"
+alias = "version:bump-patch"
+run = "'{{config_root}}/.mise/scripts/versioning.sh' bump patch"
+
+[tasks."version:bump-minor"]
+description = "Bump minor version: vX.Y.Z -> vX.(Y+1).0"
+run = "'{{config_root}}/.mise/scripts/versioning.sh' bump minor"
+
+[tasks."version:bump-major"]
+description = "Bump major version: vX.Y.Z -> v(X+1).0.0"
+run = "'{{config_root}}/.mise/scripts/versioning.sh' bump major"
+
+[tasks."version:check"]
+description = "Verify every versioned file is in parity"
+run = "'{{config_root}}/.mise/scripts/versioning.sh' check"
+
+[tasks."version:sync"]
+description = "Force every versioned file up to the highest version"
+run = "'{{config_root}}/.mise/scripts/versioning.sh' sync"
+# <<< mise-versioning <<<

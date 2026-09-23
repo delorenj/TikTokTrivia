@@ -28,3 +28,6 @@
 *.mp3
 *.mp4
 *.opus
+
+# Canonical agent config lives in .agents; generated skill projections stay local.
+/.agents/skills
