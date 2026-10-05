@@ -1,0 +1,54 @@
+installation:
+  version: 6.12.1-next.0
+  installDate: 2026-09-16T23:59:53.416Z
+  lastUpdated: 2026-09-16T23:59:53.416Z
+  installShims: false
+modules:
+  - name: core
+    version: 6.12.1-next.0
+    installDate: 2026-09-16T23:59:53.327Z
+    lastUpdated: 2026-09-16T23:59:53.412Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: bmm
+    version: 6.12.1-next.0
+    installDate: 2026-09-16T23:59:53.364Z
+    lastUpdated: 2026-09-16T23:59:53.413Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: bmb
+    version: main
+    installDate: 2026-09-16T23:59:53.379Z
+    lastUpdated: 2026-09-16T23:59:53.414Z
+    source: external
+    npmPackage: bmad-builder
+    repoUrl: https://github.com/bmad-code-org/bmad-builder
+    channel: next
+    sha: 4a1422274a2acb0fb0ec0511753da6263948f072
+  - name: cis
+    version: main
+    installDate: 2026-09-16T23:59:53.385Z
+    lastUpdated: 2026-09-16T23:59:53.415Z
+    source: external
+    npmPackage: bmad-creative-intelligence-suite
+    repoUrl: https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite
+    channel: next
+    sha: 97298b22fee1c7e482710d3a8414adb5cfccccd9
+  - name: bmad-loop
+    version: main
+    installDate: 2026-09-16T23:59:53.390Z
+    lastUpdated: 2026-09-16T23:59:53.416Z
+    source: external
+    npmPackage: null
+    repoUrl: https://github.com/bmad-code-org/bmad-loop
+    channel: next
+    sha: a4d51fc2aef3786b94d95acc7c72fdc25312c1e3
+ides:
+  - claude-code
+  - codex
+  - antigravity-cli
+  - hermes
+  - kimi-code
+  - mistral-vibe
